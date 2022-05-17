@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/newsCategoriesFragment">
+
+    <fragment
+        android:id="@+id/newsCategoriesFragment"
+        android:name="by.it.andersen.newsapikt.presentation.view.NewsCategoriesFragment"
+        android:label="news_categories_fragment"
+        tools:layout="@layout/news_categories_fragment" >
+        <action
+            android:id="@+id/action_newsCategoriesFragment_to_newsListFragment3"
+            app:destination="@id/newsListFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsListFragment3"
+        android:name="by.it.andersen.newsapikt.presentation.view.NewsListFragment"
+        android:label="news_list_fragment"
+        tools:layout="@layout/news_list_fragment" >
+        <action
+            android:id="@+id/action_newsListFragment3_to_newDescriptionFragment"
+            app:destination="@id/newDescriptionFragment" />
+        <argument
+            android:name="category"
+            app:argType="string"
+            android:defaultValue="Category"/>
+    </fragment>
+    <fragment
+        android:id="@+id/newDescriptionFragment"
+        android:name="by.it.andersen.newsapikt.presentation.view.NewsDescriptionFragment"
+        android:label="fragment_new_description"
+        tools:layout="@layout/fragment_new_description" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="image_url"
+            app:argType="string" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
+</navigation>
